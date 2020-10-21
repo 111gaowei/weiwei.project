@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="./js/vue.js"></script>
+  <link rel="stylesheet" href="./css/demo.css">
+  <title>走路有钱</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="total" :style="{width:screenWidth+'px'}">
+      <div v-if="main==0" class="left number1">
+        <div :style="{height:0.5*screenHeight+'px'}">
+          <div class="first "><img class="pic" src="./index_img/logo_login@2x.png" alt="">
+          </div>
+          <div class="second"><img class="pic" src="./index_img/logo／text@2x.png" alt=""></div>
+          <div class="third">养健康习惯，能赚零花钱</div>
+          <div class="fourth"><img src="./index_img/btn／AppStore.png" alt=""></div>
+          <div class="fifth"><img src="./index_img/btn／android.png" alt=""></div>
+        </div>
+        <div :style="{height:0.5*screenHeight+'px'}">
+          <div class="two-code">
+            <div :class="se==1?'big':'small'"><img
+                :src="se==1?'./index_img/img_qrcode_0@2x.png':'./index_img/img_qrcode_1@2x.png'" alt="">
+            </div>
+            <div :class="se==1?'small':'big'"><img
+                :src="se==1?'./index_img/img_qrcode_1@2x.png':'./index_img/img_qrcode_0@2x.png'" alt="">
+            </div>
+          </div>
+          <div class="text">
+            <div class="bg" :class="se==1?'left':'right'"></div>
+            <div :class="se==1?'selected':''" @click="choose(1)">
+              扫码下载
+            </div>
+            <div :class="se==1?'':'selected'" @click="choose(2)">
+              关注公众号
+            </div>
+          </div>
+          <div class="last one">
+            <span @click="goto(1)">联系我们</span> ·
+            <span @click="goto(2)">隐私政策</span> ·
+            <span>服务协议</span>
+          </div>
+          <div class="last">
+            陕ICP备14007358号-1
+          </div>
+          <div class="last">
+            Powered by 2020-2021 RUNMONEY.COM
+          </div>
+        </div>
+      </div>
+      <div v-else-if="main==1" class="left">
+        <div class="first_1">
+          <img src="./index_img/icon／back@2x.png" @click="back" alt="">
+          <span>联系我们</span>
+        </div>
+        <br>
+        <div class="text_area" :style="{height:(screenHeight-100)+'px'}">
+          公司名称：西安远科纵航网络科技有限公司
+          <br>
+          <br>
+          地址：陕西省西安市莲湖区高新三路财富中心1幢2单元20812室电话：010-61190680
+          <br>
+          <br>
+          <br>
+          请通过以下方式联系我们：）
+          <br>
+          <br>
+          市场合作：bd@easyaso.com
+          <br>
+          广告投放：ad@easyaso.com
+        </div>
+      </div>
+      <div v-else class="left">
+        <div class="first_1">
+          <img src="./index_img/icon／back@2x.png" @click="back" alt="">
+          <span>隐私政策</span>
+        </div>
+        <br>
+        <div class="text_area" :style="{height:text_area_height+'px'}">
+          本应用尊重并保护所有使用服务用户的个人隐私权。为了给您提供更准确、更有个性化的服务，本应用会按照本隐私权政策的规定使用和披露您的个人信息。但本应用将以高度的勤勉、审慎义务对待这些信息。除本隐私权政策另有规定外，在未征得您事先许可的情况下，本应用不会将这些信息对外披露或向第三方提供。本应用会不时更新本隐私权政策。
+          您在同意本应用服务使用协议之时，即视为您已经同意本隐私权政策全部内容。本隐私权政策属于本应用服务使用协议不可分割的一部分。
+          <br>
+          <br>
+          适用范围
+          (a) 在您注册本应用帐号时，您根据本应用要求提供的个人注册信息；
+          <br>
+          <br>
+          (b)
+          在您使用本应用网络服务，或访问本应用平台网页时，本应用自动接收并记录的您的浏览器和计算机上的信息，包括但不限于您的IP地址、浏览器的类型、使用的语言、访问日期和时间、软硬件特征信息及您需求的网页记录等数据；
+          <br>
+          <br>
+          (c) 本应用通过合法途径从商业伙伴处取得的用户个人数据。
+          <br>
+          <br>
+          您了解并同意，以下信息不适用本隐私权政策：
+          <br>
+          <br>
+          (a) 您在使用本应用平台提供的搜索服务时输入的关键字信息；
+          <br>
+          <br>
+          (b) 本应用收集到的您在本应用发布的有关信息数据，包括但不限于参与活动、成交信息及评价详情；
+          <br>
+          <br>
+          (c) 违反法律规定或违反本应用规则行为及本应用已对您采取的措施。
+          <br>
+          <br>
+          信息使用
+          (a)本应用不会向任何无关第三方提供、出售、出
+        </div>
+      </div>
+      <div @mousewheel.stop="toChange"
+        :style="{height:screenHeight+'px',transform:'translate3d(0,0,0)',overflow:'hidden'}"
+        class="right swiper-container1">
+        <div class="swiper-wrapper">
+          <div :style="{height:screenHeight+'px',transform:'translate3d(0,0,0)'}" class="content swiper-slide">
+            <!-- <div class="bg_area top" :style="{height:screenHeight+'px',width:bgWidth+'px'}"></div> -->
+            <div class="text-area">
+              <div class="title">每天走路就能领钱</div>
+              <div class="detail">实时同步微信步数，每天坚持锻炼，不但收获健康好身体，还能顺便换点零花钱。</div>
+              <div class="icon">
+                <img src="./index_img/icon_left@2x.png" @click="move(-1,1)" alt="">
+                <img src="./index_img/icon／right@2x.png" @click="move(1,1)" alt="">
+              </div>
+            </div>
+            <div class="phone">
+              <img v-if="img==0" src="./index_img/img_home1_iPhone1@2x.png" alt="">
+              <img v-if="img==1" src="./index_img/img_home1_iPhone2@2x.png" alt="">
+              <img v-if="img==2" src="./index_img/img_home1_iPhone3@2x.png" alt="">
+            </div>
+          </div>
+          <div :style="{height:screenHeight+'px',transform:'translate3d(0,0,0)'}" class="content second swiper-slide">
+            <!-- <div class="bg_area center" :style="{height:screenHeight+'px',width:bgWidth+'px'}"></div> -->
+            <div class="phone">
+              <img v-if="img==0" src="./index_img/img_home2_iPhone1@2x.png" alt="">
+              <img v-if="img==1" src="./index_img/img_home2_iPhone2@2x.png" alt="">
+            </div>
+            <div class="text-area ">
+              <div class="title">培养好习惯也能赚钱</div>
+              <div class="detail">习惯列表助你养成更多健康好习惯。每天喝水，每天阅读，每天吃早餐… …都有金币奖励</div>
+              <div class="icon">
+                <img src="./index_img/icon_left@2x.png" @click="move(-1,2)" alt="">
+                <img src="./index_img/icon／right@2x.png" @click="move(1,2)" alt="">
+              </div>
+            </div>
+          </div>
+          <div :style="{height:screenHeight+'px',transform:'translate3d(0,0,0)'}" class="content swiper-slide">
+            <!-- <div class="bg_area bottom" :style="{height:screenHeight+'px',width:bgWidth+'px'}"></div> -->
+            <div class="text-area">
+              <div class="title">抽奖游戏天天惊喜</div>
+              <div class="detail">众多新玩法，欢乐摇奖机，幸运大转盘，每天好运不停转。</div>
+              <div class="icon">
+                <img src="./index_img/icon_left@2x.png" @click="move(-1,3)" alt="">
+                <img src="./index_img/icon／right@2x.png" @click="move(1,3)" alt="">
+              </div>
+            </div>
+            <div class="phone">
+              <img v-if="img==0" src="./index_img/img_home3_iPhone1@2x.png" alt="">
+              <img v-if="img==1" src="./index_img/img_home3_iPhone2@2x.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div @mousewheel.prevent="toChange"
+      :style="{height:screenHeight+'px',width:bgWidth+'px',transform:'translate3d(0,0,0)',overflow:'hidden'}"
+      class="bg_right right swiper-container2">
+      <div class="swiper-wrapper">
+        <div :style="{height:screenHeight+'px',width:bgWidth+'px',transform:'translate3d(0,0,0)'}"
+          class="content swiper-slide">
+          <div class="bg_area top" :style="{height:screenHeight+'px',width:bgWidth+'px'}"></div>
+        </div>
+        <div :style="{height:screenHeight+'px',width:bgWidth+'px',transform:'translate3d(0,0,0)'}"
+          class="content second swiper-slide">
+          <div class="bg_area center" :style="{height:screenHeight+'px',width:bgWidth+'px'}"></div>
+        </div>
+        <div :style="{height:screenHeight+'px',width:bgWidth+'px',transform:'translate3d(0,0,0)'}"
+          class="content swiper-slide">
+          <div class="bg_area bottom" :style="{height:screenHeight+'px',width:bgWidth+'px'}"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"> </script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        se: 1,
+        main: 0,
+        img: 0,
+        mySwiper1: null,
+        mySwiper2: null,
+        screenWidth: window.innerWidth,
+        screenHeight: window.innerHeight > 600 ? window.innerHeight : 600,
+      },
+      mounted() {
+        this.mySwiper1 = new Swiper('.swiper-container1', {
+          speed:1500,
+          direction: 'vertical', // 垂直切换选项
+          watchSlidesProgress: true,
+          loop: true, // 循环模式选项
+          // mousewheel: true,
+          // mousewheel: {
+          //   thresholdTime: 700,
+          //   thresholdDelta:300,
+          // },
+          observer: true,
+          on: {
+            slideChangeTransitionStart: () => {
+              this.img = 0;
+              // mySwiper1.mousewheel.disable(); //禁止鼠标滑轮控制
+              // mySwiper2.mousewheel.disable(); //禁止鼠标滑轮控制
+              // setTimeout(() => {
+              //   mySwiper1.mousewheel.enable(); //开启鼠标滑轮控制
+              //   mySwiper2.mousewheel.enable(); //开启鼠标滑轮控制
+              // }, 500);
+            },
+          }
+        })
+        this.mySwiper2 = new Swiper('.swiper-container2', {
+          direction: 'vertical', // 垂直切换选项
+          speed:1500,
+          loop:true,
+          watchSlidesProgress: true,
+          observer: true,
+          on: {
+            slideChangeTransitionStart: () => {
+              this.img = 0;
+            },
+          },
+          controller: {
+            control: this.mySwiper1, //控制Swiper1
+          },
+        })
+        this.mySwiper1.controller.control = this.mySwiper2;//Swiper1控制Swiper2，需要在Swiper2初始化后
+        this.mySwiper2.controller.control = this.mySwiper1;//Swiper2控制Swiper1，需要在Swiper1初始化后
+        const that = this;
+        window.onresize = () => {
+          return (() => {
+            window.screenWidth = window.innerWidth
+            window.screenHeight = window.innerHeight;
+            window.screenHeight > 600 ? that.screenHeight = window.screenHeight : that.screenHeight = 600;
+            that.screenWidth = window.screenWidth
+          })()
+        }
+      },
+      computed: {
+        bgWidth() {
+          if (this.screenWidth > 1440) {
+            return this.screenWidth - ((this.screenWidth - 1440) / 2 + 542)
+          } else {
+            return this.screenWidth - 542
+          }
+        },
+        text_area_height() {
+          if (this.screenHeight > 600 && this.screenHeight < 800) {
+            return this.screenHeight - 100
+          } else {
+            return 700
+          }
+        }
+      },
+      watch: {
+        screenHeight(val) {
+          if (!this.timer) {
+            this.timer = true;
+            val > 600 ? this.screenHeight = val : this.screenHeight = 600;
+            setTimeout(() => {
+              this.timer = false;
+            }, 400)
+          }
+        },
+        screenWidth(val) {
+          if (!this.timer) {
+            this.timer = true;
+            this.screenWidth = val;
+            let that = this;
+            setTimeout(() => {
+              that.timer = false;
+            }, 400)
+          }
+        }
+      },
+      methods: {
+        toChange(e) {
+          if (e.deltaY > 0) {
+            if (!this.timer) {
+              this.timer = true;
+              var page = this.mySwiper1.slides[0].progress;
+              console.log(page)
+                this.mySwiper1.slideTo(page + 1);
+                this.mySwiper2.slideTo(page + 1);
+              setTimeout(() => {
+                this.timer = false;
+              }, 1500);
+            }
+          } else {
+            if (!this.timer) {
+              this.timer = true;
+              var page = this.mySwiper1.slides[0].progress;
+                this.mySwiper1.slideTo(page - 1);
+                this.mySwiper2.slideTo(page - 1);
+              setTimeout(() => {
+                this.timer = false;
+              }, 1500);
+            }
+          }
+        },
+        choose(e) {
+          this.se = e
+        },
+        move(e, n) {
+          if (e == -1 && this.img == 0) {
+            if (n == 1) {
+              this.img = 2
+            } else {
+              this.img = 1
+            }
+          } else if ((this.img == 2 && e == 1) || (this.img == 1 && e == 1 && n !== 1)) {
+            this.img = 0
+          } else {
+            this.img += e
+          }
+        },
+        goto(e) {
+          this.main = e;
+        },
+        back() {
+          this.main = 0;
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

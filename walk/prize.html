@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./js/vue.js"></script>
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./css/prize.css">
+  <title>摇摇乐</title>
+</head>
+<body>
+  <div id="app" class="outside">
+    <!-- <div class="back">
+      <img src="./turntable_pic/icon_back@3x.png" alt="">
+      <div>今日有奖</div>
+    </div> -->
+    <div class="second">
+      <img src="./turntable_pic/img_lottery_bg@2x.png" alt="">
+      <div class="text" :style="{lineHeight:0.084*screenWidth+'px'}">今日免费次数：{{times}}</div>
+      <div :style="{width:0.72*screenWidth+'px'}"  class="in_pic">
+        <img src="./turntable_pic/img_lottery_lottery_roller@3x.png"  alt="">
+        <img src="./turntable_pic/img_lottery_lottery_roller@3x.png"  alt="">
+        <img src="./turntable_pic/img_lottery_lottery_roller@3x.png"  alt="">
+        <div>
+          <div class="position left" :style="{marginTop:mt1+'px',transition: havetran1?'all 5s ease':''}">
+            <img v-for="(item,index) of imgs1" :src="item.url" :key="index" :class="index==0?'award':''" alt="">
+          </div>
+          <div class="position center" :style="{marginTop:mt2+'px',transition: havetran2?'all 5s ease':''}">
+            <img v-for="(item,index) of imgs2" :src="item.url" :key="index" alt="">
+          </div>
+          <div class="position right" :style="{marginTop:mt3+'px',transition: havetran3?'all 5s ease':''}">
+            <img v-for="(item,index) of imgs3" :src="item.url" :key="index" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="directive" :class="!diving && times>0?'gif':'png'">
+        <img v-if="!diving && times>0" @click="move" src="./turntable_pic/directive.gif" alt="">
+        <img v-else @click="alert" src="./turntable_pic/btn_huanle_lottery@3x.png" alt="">
+      </div>
+    </div>
+    <div class="last">
+      <div class="bg"></div>
+      <div class="top">
+        <span>活动规则</span>
+        <div class="line-left"></div>
+        <div class="line-right"></div>
+      </div>
+      <div class="bottom">
+        1.每天一共有1期活动,每期限时1小时。每天首次进入活动页即开启当天第一期的活动, 1小时后当期活动结束,再进入活动页将自动开启下一期活动
+        <br>
+        <br>
+        2.在每期活动开始时,平台会赠送一部分抽奖次数。赠送的次数用完后,您也可通过看视频来获取额外的抽奖次数
+        <br>
+        <br>
+        3.当期获得的抽奖次数请在当期使用完,当期活动结束时,剩余的抽奖次数将清空
+        <br>
+        <br>
+        4.本活动最终解释权由走点钱APP所有
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      screenWidth: window.innerWidth,
+      diving: false,
+      times: 8, //window.localStorage.getItem('times'),
+      arrs: [
+        "谢谢参与", "红包十元", "两千金币", "红包两元"
+      ],
+      arr: [
+        // 谢谢参与
+        [
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          }
+        ],
+        // 红包十元
+        [
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+        ],
+        // 两千金币
+        [
+          {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          }, {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          }, {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          }, {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          }, {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          },
+        ],
+        // 红包两元
+        [
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_redEnvelope@3x.png",
+            name: "红包10元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_coupon@3x.png",
+            name: "红包2元"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_smiley@3x.png",
+            name: "谢谢参与"
+          },
+          {
+            url: "./turntable_pic/icon_huanle_giftBox@3x.png",
+            name: "2000金币"
+          },
+        ],
+      ],
+      imgs1: [],
+      imgs2: [],
+      imgs3: [],
+      havetran1: true,
+      havetran2: true,
+      havetran3: true,
+      copies: null,
+      mt1: -30,
+      mt2: -30,
+      mt3: -30,
+      data: 0,
+    },
+    mounted() {
+      window.iostojs = this.iostojs;
+      const that = this;
+      window.onresize = () => {
+        return (() => {
+          window.screenWidth = window.innerWidth
+          that.screenWidth = window.screenWidth
+        })()
+      };
+      this.imgs1 = this.arr[0];
+      this.imgs2 = this.arr[1];
+      this.imgs3 = this.arr[2];
+      setTimeout(() => {
+        var img = document.querySelectorAll(".award")[0]
+        this.copies = img.offsetWidth + 28;
+      }, 50);
+    },
+    methods: {
+      // ios调用js入口
+      iostojs(action) {
+        return this.times = action;
+        this.data = action
+      },
+      move() {
+        this.diving = true;
+        if (this.times > 0) {
+          this.times--;//剩余次数
+          this.havetran1 = false;
+          //三个随机数（10-22）
+          let n1 = Math.ceil(Math.random() * 3);
+          let n2 = Math.ceil(Math.random() * 3);
+          let n3 = Math.ceil(Math.random() * 3);
+          // 先更改图片的排布顺序
+          this.imgs1 = this.arr[n1]
+          this.mt1 = -this.copies * 20 - 30;
+          setTimeout(() => {
+            this.imgs2 = this.arr[n2]
+            this.havetran2 = false;
+            this.mt2 = -this.copies * 20 - 30;
+            setTimeout(() => {
+              this.imgs3 = this.arr[n3]
+              this.havetran3 = false;
+              this.mt3 = -this.copies * 20 - 30;
+            }, 1500);
+          }, 1500);
+          setTimeout(() => {
+            // 让图片最终定在-30位置
+            this.havetran1 = true;
+            this.mt1 = - 30;
+            setTimeout(() => {
+              this.havetran2 = true;
+              this.mt2 = - 30;
+              setTimeout(() => {
+                this.havetran3 = true;
+                this.mt3 = - 30;
+              }, 1500)
+            }, 1500)
+            setTimeout(() => {
+              this.diving = false;
+              console.log(n1 + '--' + this.arrs[n1], n2 + '--' + this.arrs[n2], n3 + '--' + this.arrs[n3])
+            }, 8000);
+          }, 50);
+        } else {
+          alert('今日次数已用尽')
+        }
+        window.webkit.messageHandlers.jstoios.postMessage({ title: this.times });
+      },
+      alert() {
+        if (this.diving == false && this.times == 0) {
+          alert("今日次数已用尽")
+        }
+      }
+    },
+    watch: {
+      screenWidth(val) {
+        if (!this.timer) {
+          this.screenWidth = val;
+          setTimeout(() => {
+            var img = document.querySelectorAll(".award")[0]
+            this.copies = img.offsetWidth + 28;
+            this.timer = false;
+          }, 400)
+        }
+      }
+    },
+  })
+</script>
+
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang='en' style='width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px;'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <title>邀请好友</title>
+</head>
+<body style='position: relative; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px;'>
+    <div style='position: absolute; width: 100%; height: calc(100vw * 2.165); background: linear-gradient(360deg, #FFAD73 0%, #FF5A44 100%); z-index: -1;'>
+        <!--邀请好友领100元红包图片-->
+        <div style='position: relative; width: 100%; z-index: 1;'>
+            <div style='position: relative; height: calc(100vw * 0.0375);'></div>
+            <img src='./image/img_invite_bg&title.png' style='width: 100%; height: auto; display:block;'>
+            <!--红包内纸张-->
+            <div style='position: absolute; top: calc(100vw * 0.758); width: 93.6%; height: calc(100vw * 1.024); left: 50%; transform: translateX(-50%); background: linear-gradient(144deg,#FDF7F1 0%,#FAEDDF 100%); border-radius: calc(100vw * 0.002); z-index: 2;'>
+                <!--红包内正文-->
+                <div style='position: relative; top: calc(100vw * 0.043); left: calc(100vw * 0.043); right: calc(100vw * 0.043); width: calc(100% - (100vw * 0.086)); height: 100%;'>
+                    <!--红包内容边框图片-->
+                    <div style='position: absolute; width: 100%;'>
+                        <img src='./image/img_invite_frame.png' style='width: 100%; height: auto; display:block;'>
+                    </div>
+                    <!--屏幕过窄或者文字过多会换行 显示就乱了 这是个问题-->
+                    <div style='position: absolute; top: 4.5%; left: 50%; transform: translateX(-50%); width: 72.4%; height: 10.4%; background: rgba(231, 213, 176, 5.7); border-radius: calc(100vw * 0.053); display: table;'>
+                        <div style='position: relative; width: 100%; display: table-cell; vertical-align: middle; font-size: calc(100vw * 0.043); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: rgba(0, 0, 0, 0.7); text-align:center;'>
+                            恭喜你又获得现金0.2元
+                        </div>
+                    </div>
+                    <div style='position: absolute; top: 19%; width: 100%; height: 18.45%; font-size: calc(100vw * 0.16); font-family: SanFranciscoText-Bold, SanFranciscoText; font-weight: bold; color: #FF6B4E; letter-spacing: calc(100vw * 0.003); text-align: center;'>
+                        ¥92.2
+                    </div>
+                    <div style='position: absolute; top: 41.7%; width: 100%; height: 5.7%; font-size: calc(100vw * 0.043); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: #B98854; letter-spacing: calc(100vw * 0.003); text-align: center;'>
+                        满100元可提现，仅差7.8元
+                    </div>
+                    <!--进度条背景-->
+                    <div style='position: absolute; top: 51.6%; left: 50%; transform: translateX(-50%); width: calc(84.6%); height: 2%; background: #ECD2CE; border-radius: calc(100vw * 0.016);'>
+                        <!--进度条前景-->
+                        <div style='position: relative; width: 92.2%; height: 100%; left: 0px; background: #FF5D46; border-radius: calc(100vw * 0.016);'>
+                        </div>
+                    </div>
+                    <!--分享到群聊领红包按钮-->
+                    <div style='position: absolute; top: 56.5%; left: 50%; transform: translateX(-50%); width: 67%;'>
+                        <img src='./image/btn_invite_share.png' style='width: 100%; height: auto; display:block;'>
+                    </div>
+                </div>
+            </div>
+            <!--红包背面口图片-->
+            <div style='position: absolute; top: calc(100vw * 1.488); height: 0px; width: 100%; z-index: 1;'>
+                <img src='./image/img_invite_redEnvelope_down.png' style='width: 100%; height: auto; transform:translateY(-45%); display: block;'>
+            </div>
+        </div>
+    </div>
+
+    <div style='position: absolute; z-index: 3; top: calc(100vw * 1.488); width: 100%;'>
+        <!--红包前面口图片-->
+        <div style='position: relative; width: 100%;'>
+            <img src='./image/img_invite_redEnvelope_up.png' style='width: 100%; height: auto; display:block;'>
+        </div>
+
+        <!--从红包前面口下沿开始布局 高度不固定 如果内容太少 得想办法让最小高度到屏幕底部-->
+        <div style='position: relative; width: 100%; background: #FF5D46;'>
+            
+            <div style='position: relative; height: calc(100vw * 0.051);'></div>
+            
+            <!--助力流程-->
+            <div style='position: relative; height: calc(100vw * 0.059); left: 50%; transform: translateX(-50%); width: 85.1%;'>
+                <div style='position: absolute; top: 54.24%; left: 0px; width: 38%; height: 5%; background: rgba(255, 255, 255, 0.3); display: inline-block;'>
+                </div>
+                <div style='position: absolute; left: 38%; width: 24%; height: 100%; font-size: (100vw * 0.043); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: rgba(255, 255, 255, 0.7); letter-spacing: calc(100vw * 0.003); text-align: center; display: inline-block;white-space: nowrap;'>
+                    助力流程
+                </div>
+                <div style='position: absolute; top: 54.24%; right: 0; width: 38%; height: 5%; background: rgba(255, 255, 255, 0.3); display: inline-block;'>
+                </div>
+            </div>
+
+            <div style='position: relative; height: calc(100vw * 0.043);'></div>
+
+            <!--助力流程图标横向排列-->
+            <div style='position: relative; height: calc(100vw * 0.043); left: 50%; transform: translateX(-50%); width: 85.1%;'>
+                <div style='position: absolute; left: 6.35%; width: calc(100vw * 0.043); height: 100%; display:inline-block;'>
+                    <img src='./image/icon_invite_share.png' style='width: 100%; height: auto; display:block;'>
+                </div>
+                <div style='position: absolute; left: calc(100vw * 0.043 + 28.91%); width: calc(100vw * 0.043); height: 100%; display:inline-block;'>
+                    <img src='./image/icon_invite_inviteCode.png' style='width: 100%; height: auto; display:block;'>
+                </div>
+                <div style='position: absolute; right: calc(100vw * 0.043 + 28.91%); width: calc(100vw * 0.043); height: 100%; display:inline-block;'>
+                    <img src='./image/icon_invite_download.png' style='width: 100%; height: auto; display:block;'>
+                </div>
+                <div style='position: absolute; right: 6.35%; width: calc(100vw * 0.043); height: 100%; display:inline-block;'>
+                    <img src='./image/icon_invite_cheakIn.png' style='width: 100%; height: auto; display:block;'>
+                </div>
+            </div>
+
+            <div style='position: relative; height: calc(100vw * 0.016)'></div>
+
+            <!--助力流程说明横向排列-->
+            <div style='position: relative; height: calc(100vw * 0.091); left: 50%; transform: translateX(-50%); width: 85.1%;'>
+                <div style='position: absolute; left: 0px; width: 17.63%; height: 100%; font-size: calc(100vw * 0.032); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: rgba(255, 255, 255, 0.4); line-height: calc(100vw * 0.046); letter-spacing: calc(100vw * 0.003); display:inline-block; text-align: center;'>
+                    分享给好友
+                </div>
+                <div style='position: absolute; top: 8.79%; left: 20.8%; width: 3.76%; font-size: 0; display:inline-block;'>
+                    <img src='./image/icon_invite_right.png' style='width: 100%; height: auto; display:block;'>
+                </div>
+                <div style='position: absolute; left: 27.73%; width: 17.63%; height: 100%; font-size: calc(100vw * 0.032); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: rgba(255, 255, 255, 0.4); line-height: calc(100vw * 0.046); letter-spacing: calc(100vw * 0.003); display:inline-block; text-align: center;'>
+                    填写邀请码
+                </div>
+                <div style='position: absolute; top: 8.79%; left: 48.53%; width: 3.76%; font-size: 0; display:inline-block;'>
+                    <img src='./image/icon_invite_right.png' style='width: 100%; height: auto; display:block;'>
+                </div>
+                <div style='position: absolute; right: 27.73%; width: 17.63%; height: 100%; font-size: calc(100vw * 0.032); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: rgba(255, 255, 255, 0.4); line-height: calc(100vw * 0.046); letter-spacing: calc(100vw * 0.003); display:inline-block; text-align: center;'>
+                    好友下载注册
+                </div>
+                <div style='position: absolute; top: 8.79%; right: 8.79%; width: 3.76%; font-size: 0; display:inline-block;'>
+                    <img src='./image/icon_invite_right.png' style='width: 100%; height: auto; display:block;'>
+                </div>
+                <div style='position: absolute; right: 0px; width: 17.63%; height: 100%; font-size: calc(100vw * 0.032); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: rgba(255, 255, 255, 0.4); line-height: calc(100vw * 0.046); letter-spacing: calc(100vw * 0.003); display:inline-block; text-align: center;'>
+                    好友签到3次
+                </div>
+            </div>
+
+            <div style='position: relative; height: calc(100vw * 0.067)'></div>
+
+            <!--红包记录模块 高度不固定-->
+            <div style='position: relative; width: 93.6%; left: 50%; transform: translateX(-50%); background: rgba(0, 0, 0, 0.1); border-radius: calc(100vw * 0.021);'>
+                
+                <div style='position: relative; height: calc(100vw * 0.04);'></div>
+
+                <!--红包记录-->
+                <div style='position: relative; height: calc(100vw * 0.059); left: 50%; transform: translateX(-50%); width: 90.92%;'>
+                    <div style='position: absolute; left: 0px; top: 49.15%; width: 38%; height: 5%; background: rgba(255, 255, 255, 0.3); display: inline-block;'>
+                    </div>
+                    <div style='position: absolute; left: 38%; width: 24%; height: 100%; font-size: (100vw * 0.043); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: rgba(255, 255, 255, 0.7); letter-spacing: calc(100vw * 0.003); display: inline-block; text-align: center;white-space: nowrap;'>
+                        红包记录
+                    </div>
+                    <div style='position: absolute; right: 0px; top: 49.15%; width: 38%; height: 5%; background: rgba(255, 255, 255, 0.3); display: inline-block;'>
+                    </div>
+                </div>
+
+                <div style='position: relative; height: calc(100vw * 0.021);'></div>
+
+                <!--红包记录列表 子元素数量不固定 高度不固定 超过最大高度显示滚动条-->
+                <div style='position: relative; left: 50%; transform: translateX(-50%); overflow: hidden; width: 90.92%; min-height: calc(100vw * 0.193); max-height: calc(100vw * 1.543);'>
+                    <div style='position: relative; height: calc(100vw * 0.043);'></div>
+
+                    <div style='position: relative; height: calc(100vw * 0.107); width: 100%;'>
+                        <div style='position: absolute; left: 0px; width: calc(100vw * 0.107); height: 100%; display:inline-block;'>
+                            <img src='./image/icon_friend_one.png' style='width: 100%; height: auto; display:block;'>
+                        </div>
+                        <div style='position: absolute; right: 0px; width: calc(100% - calc(100vw * 0.128)); height: 100%; display:inline-block;'>
+                            <div style='position: relative; width: 100%; height: 100%;'>
+                                <div style='position: relative; width: 100%; height: 55.14%;'>
+                                    <div style='position: absolute; left: 0px; width: 69.16%; height: 100%; font-size: calc(100vw * 0.043); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: rgba(255, 255, 255, 0.9); letter-spacing: calc(100vw * 0.003); text-align: left; display:inline-block;'>
+                                        好友助力
+                                    </div>
+                                    <div style='position: absolute; right: 0px; width: 30.84%; height: 100%; font-size: calc(100vw * 0.043); font-family: SanFranciscoText-Semibold, SanFranciscoText; font-weight: 600; color: #FBF1E5; text-align: right; display:inline-block;'>
+                                        0.3¥
+                                    </div>
+                                </div>
+                                <div style='position: relative; height: 2.8%;'></div>
+                                <div style='position: relative; width: 100%; height: 34.58%;'>
+                                    <div style='position: absolute; left: 0px; width: 69.16%; height: 100%; font-size: calc(100vw * 0.027); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: rgba(255, 255, 255, 0.7); letter-spacing: calc(100vw * 0.003);text-align: left; display:inline-block;'>
+                                        好友签到3次，助力成功
+                                    </div>
+                                    <div style='position: absolute; right: 0px; width: 30.84%; height: 100%; font-size: calc(100vw * 0.027); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: rgba(255, 255, 255, 0.7); letter-spacing: calc(100vw * 0.003);text-align: right; display:inline-block;white-space: nowrap;'>
+                                        2020-08-01
+                                    </div>
+                                </div>
+                                <div style='position: relative; height: 7.48%;'></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style='position: relative; height: calc(100vw * 0.043);'></div>
+                    
+                    <div style='position: relative; height: calc(100vw * 0.107); width: 100%;'>
+                        <div style='position: absolute; left: 0px; width: calc(100vw * 0.107); height: 100%; display:inline-block;'>
+                            <img src='./image/icon_friend_share.png' style='width: 100%; height: auto;'>
+                        </div>
+                        <div style='position: absolute; right: 0px; width: calc(100% - calc(100vw * 0.128)); height: 100%; display:inline-block;'>
+                            <div style='position: relative; width: 100%; height: 100%;'>
+                                <div style='position: relative; width: 100%; height: 55.14%;'>
+                                    <div style='position: absolute; left: 0px; width: 69.16%; height: 100%; font-size: calc(100vw * 0.043); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: rgba(255, 255, 255, 0.9); letter-spacing: calc(100vw * 0.003); text-align: left; display:inline-block;'>
+                                        首次分享
+                                    </div>
+                                    <div style='position: absolute; right: 0px; width: 30.84%; height: 100%; font-size: calc(100vw * 0.043); font-family: SanFranciscoText-Semibold, SanFranciscoText; font-weight: 600; color: #FBF1E5; text-align: right; display:inline-block;'>
+                                        0.2¥
+                                    </div>
+                                </div>
+                                <div style='position: relative; height: 2.8%;'></div>
+                                <div style='position: relative; width: 100%; height: 34.58%;'>
+                                    <div style='position: absolute; left: 0px; width: 69.16%; height: 100%; font-size: calc(100vw * 0.027); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: rgba(255, 255, 255, 0.7); letter-spacing: calc(100vw * 0.003);text-align: left; display:inline-block;'>
+                                        邀请好友，一起领现金
+                                    </div>
+                                    <div style='position: absolute; right: 0px; width: 30.84%; height: 100%; font-size: calc(100vw * 0.027); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: rgba(255, 255, 255, 0.7); letter-spacing: calc(100vw * 0.003);text-align: right; display:inline-block;white-space: nowrap;'>
+                                        2020-07-09
+                                    </div>
+                                </div>
+                                <div style='position: relative; height: 7.48%;'></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style='position: relative; height: calc(100vw * 0.043);'></div>
+
+                    <div style='position: relative; height: calc(100vw * 0.107); width: 100%;'>
+                        <div style='position: absolute; left: 0px; width: calc(100vw * 0.107); height: 100%; display:inline-block;'>
+                            <img src='./image/icon_friend_first.png' style='width: 100%; height: auto;'>
+                        </div>
+                        <div style='position: absolute; right: 0px; width: calc(100% - calc(100vw * 0.128)); height: 100%; display:inline-block;'>
+                            <div style='position: relative; width: 100%; height: 100%;'>
+                                <div style='position: relative; width: 100%; height: 55.14%;'>
+                                    <div style='position: absolute; left: 0px; width: 69.16%; height: 100%; font-size: calc(100vw * 0.043); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: rgba(255, 255, 255, 0.9); letter-spacing: calc(100vw * 0.003); text-align: left; display:inline-block;'>
+                                        新人大礼包
+                                    </div>
+                                    <div style='position: absolute; right: 0px; width: 30.84%; height: 100%; font-size: calc(100vw * 0.043); font-family: SanFranciscoText-Semibold, SanFranciscoText; font-weight: 600; color: #FBF1E5; text-align: right; display:inline-block;'>
+                                        0.3¥
+                                    </div>
+                                </div>
+                                <div style='position: relative; height: 2.8%;'></div>
+                                <div style='position: relative; width: 100%; height: 34.58%;'>
+                                    <div style='position: absolute; left: 0px; width: 69.16%; height: 100%; font-size: calc(100vw * 0.027); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: rgba(255, 255, 255, 0.7); letter-spacing: calc(100vw * 0.003);text-align: left; display:inline-block;'>
+                                        福利大放送，提现秒到账
+                                    </div>
+                                    <div style='position: absolute; right: 0px; width: 30.84%; height: 100%; font-size: calc(100vw * 0.027); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: rgba(255, 255, 255, 0.7); letter-spacing: calc(100vw * 0.003);text-align: right; display:inline-block;white-space: nowrap;'>
+                                        2020-07-09
+                                    </div>
+                                </div>
+                                <div style='position: relative; height: 7.48%;'></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style='position: relative; height: calc(100vw * 0.043);'></div>
+
+                </div>
+
+                <div style='position: relative; height: calc(100vw * 0.042);'></div>
+
+            </div>
+
+            <div style='position: relative; height: calc(100vw * 0.064);'></div>
+
+            <!--活动规则-->
+            <div style='position: relative; width: 85.1%; left: 50%; transform: translateX(-50%);padding-bottom:50px;'>
+                <div style='position: relative; height: calc(100vw * 0.059); width: 100%;'>
+                    <div style='position: absolute; top: 54.24%; left: 0px; width: 38%; height: 5%; background: rgba(255, 255, 255, 0.3); display: inline-block;'>
+                    </div>
+                    <div style='position: absolute; left: 38%; width: 24%; height: 100%; font-size: (100vw * 0.043); font-family: PingFangSC-Semibold, PingFang SC; font-weight: 600; color: rgba(255, 255, 255, 0.6); display: inline-block; text-align: center;white-space: nowrap;'>
+                        活动规则
+                    </div>
+                    <div style='position: absolute; top: 54.24%; right: 0px; width: 38%; height: 5%; background: rgba(255, 255, 255, 0.3); display: inline-block;'>
+                    </div>
+                </div>
+
+                <div style='position: relative; height: calc(100vw * 0.022);'></div>
+
+                <div style='position: relative; width: 100%; font-size: calc(100vw * 0.032); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: rgba(255, 255, 255, 0.6); line-height: calc(100vw * 0.046); letter-spacing: calc(100vw * 0.003); text-align: left;line-height: 16px;'>
+                    1.分享给好友，让好友通过您分享的链接下载登录本应用并签到3次，即可获得奖励
+                </div>
+                <div style='position: relative; height: calc(100vw * 0.022);'></div>
+
+
+                <div style='position: relative; width: 100%; font-size: calc(100vw * 0.032); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: rgba(255, 255, 255, 0.6); line-height: calc(100vw * 0.046); letter-spacing: calc(100vw * 0.003); text-align: left;line-height: 16px;'>
+                    2.邀请好友必须是未注册过本应用的用户，已经被邀请的好友不能重复邀请
+                </div>
+                <div style='position: relative; height: calc(100vw * 0.022);'></div>
+
+                <div style='position: relative; width: 100%; font-size: calc(100vw * 0.032); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: rgba(255, 255, 255, 0.6); line-height: calc(100vw * 0.046); letter-spacing: calc(100vw * 0.003); text-align: left;line-height: 16px;'>
+                    3.用户需要累积现金达到一定的金额门槛才可提现，具体活动页面展示为准
+                </div>
+                <div style='position: relative; height: calc(100vw * 0.022);'></div>
+
+                <div style='position: relative; width: 100%; font-size: calc(100vw * 0.032); font-family: PingFangSC-Regular, PingFang SC; font-weight: 400; color: rgba(255, 255, 255, 0.6); line-height: calc(100vw * 0.046); letter-spacing: calc(100vw * 0.003); text-align: left;line-height: 16px;'>
+                    4.对于存在非正常邀请的用户，平台将取消其参加活动的资格，并扣除相应的奖励不予结算
+                </div>
+                <!-- <div style='position: relative; height: calc(100vw * 0.147); background-color:rgb(0, 0, 0)'></div> -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

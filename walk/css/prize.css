@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+}
+.outside {
+  width: 100%;
+  background: linear-gradient(360deg, #1171D5 0%, #198AFF 100%);
+  padding: 88px 0 20px 0;
+}
+
+.outside .back {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  font-size: 19px;
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: 26px;
+}
+
+.outside .back>img {
+  width: 12px;
+  height: 30px;
+  margin-right: 6px;
+}
+
+.outside .second {
+  margin: 0 auto;
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.outside .second>img {
+  width: 100%;
+}
+
+.outside .second>.text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  top: 26%;
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFFDEC;
+}
+
+.outside .second>img:first-child {
+  width: 100%;
+}
+
+.outside .second>.in_pic {
+  position: absolute;
+  left: 5px;
+  right: 0;
+  top: 34%;
+  margin: auto;
+  display: flex;
+  z-index: -10;
+  overflow: hidden;
+  height: calc(100vw * 0.56);
+}
+
+.outside .second>.in_pic>img {
+  width: 33.333%;
+  height: 100%;
+}
+
+.outside .second>.in_pic>div {
+  position: absolute;
+  width: 100%;
+  display: flex;
+}
+
+.outside .second>.in_pic .position {
+  width: 33.3%;
+  text-align: center;
+  /* margin-top: -40px; */
+}
+
+.outside .second>.in_pic .position>img {
+  margin: 14px 0;
+  width: 58%;
+}
+
+.outside .second>.directive {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.outside .second>.directive.gif {
+  width: 55%;
+  bottom: 13%;
+}
+
+.outside .second>.directive.png {
+  width: 42%;
+  bottom: 19%;
+}
+
+.outside .second>.directive img {
+  width: 100%;
+}
+
+.outside .last {
+  position: relative;
+  border-radius: 8px;
+  position: relative;
+  z-index: 100;
+  padding: 38px 16px;
+  margin: -65px 15px 10px 15px;
+}
+
+.outside .last>.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  border-radius: 8px;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.outside .last>.top {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  opacity: 0.9;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.outside .last>.top>span {
+  line-height: 22px;
+  /* letter-spacing: 1px; */
+  font-size: 16px;
+}
+
+.outside .last>.top>.line-left,
+.outside .last>.top>.line-right {
+  position: absolute;
+  top: 10px;
+  width: calc(50vw - 72px);
+  height: 1px;
+  background-color: #fff;
+  opacity: 0.3;
+}
+
+.outside .last>.top>.line-left {
+  left: 3px;
+}
+
+.outside .last>.top>.line-right {
+  right: 3px;
+}
+
+.outside .last>.bottom {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 17px;
+  letter-spacing: 1px;
+  margin-top: 20px;
+}

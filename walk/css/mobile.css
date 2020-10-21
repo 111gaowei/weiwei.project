@@ -1,0 +1,99 @@
+    .bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+      background: url('../mobile_img/img_newUser_bgImg@2x.png') no-repeat 50% 40%;
+      background-size: cover;
+    }
+    .logo {
+      width: 9.625rem;
+      height: 8.25rem;
+      position: fixed;
+      top: 12%;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    .logo>img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .text {
+      position: fixed;
+      top: 43%;
+      left: 0;
+      right: 0;
+      width: 7.875rem;
+      font-size: 21px;
+      font-family: PingFangSC-Semibold, PingFang SC;
+      font-weight: 600;
+      color: #FFFFFF;
+      line-height: 29px;
+      text-align: center;
+      margin: auto;
+    }
+
+    .icon {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .icon>div {
+      width: 4.3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .icon>div>img {
+      width: 100%;
+      height: 4.3rem;
+    }
+
+    .icon>div>img+div {
+      white-space: nowrap;
+      margin-top: 3px;
+      font-size: 14px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #FFFFFF;
+      line-height: 20px;
+    }
+
+    .download {
+      width: 100%;
+      position: fixed;
+      padding: 0 2rem;
+      box-sizing: border-box;
+      bottom: 17%;
+      left: 0;
+    }
+
+    .download>img {
+      width: 100%;
+    }
+
+    .bottom_text {
+      position: fixed;
+      bottom: 3%;
+      text-align: center;
+      font-size: 14px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 20px;
+      margin: auto;
+      left: 0;
+      right: 0;
+    }

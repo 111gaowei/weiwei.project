@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "uname": "dingding",
+      "upwd": "123456a",
+      "phone": 15536038319,
+      "major": "公司",
+      "major_name": "极客移动"
+    },
+    {
+      "id": 2,
+      "uname": "dangdang",
+      "upwd": "987654b",
+      "phone": 13478565478,
+      "major": "个人",
+      "major_name": "××个人"
+    },
+    {
+      "id": 3,
+      "uname": "duangduang",
+      "upwd": "246810c",
+      "phone": 15986547895,
+      "major": "公司",
+      "major_name": "xx公司"
+    },
+    {
+      "phone": "15365987452",
+      "major": "公司",
+      "major_name": "xxx公司",
+      "id": 4
+    }
+  ]
+}

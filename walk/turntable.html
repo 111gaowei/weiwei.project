@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./js/vue.js"></script>
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./css/turntable.css">
+  <title>幸运大转盘</title>
+</head>
+
+<body>
+  <div id="app" class="outside">
+    <!-- <div class="back">
+      <img src="./turntable_pic/icon_back@3x.png" alt="">
+      <div>今日有奖</div>
+    </div> -->
+    <div class="turn">
+      <div class="first">
+        <span>本场结束：01:13:40</span>
+        <span>剩余次数：8</span>
+      </div>
+      <img src="./turntable_pic/img_xingyun_bgImg_turntable@3x.png" alt="">
+      <div class="lamp">
+        <img src="./turntable_pic/lamp.gif" alt="">
+        <div class="circle">
+          <img src="./turntable_pic/img_xingyun_bgImg_turntable_up@2x.png"
+            :style=" 'transform: rotate(' +deg+ 'deg);  transition-duration: ' +time+'s;-ms-transform:rotate(' +deg+ 'deg); -webkit-transform:rotate(' +deg+ 'deg);'"
+            alt="">
+          <div class="luck">
+            <img @click="start" src="./turntable_pic/start.gif" v-if="!luck" alt="">
+            <img src="./turntable_pic/btn_xingyun_lottery@3x.png" v-else alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="bg"></div>
+      <div class="top">
+        <span> 活动规则 </span>
+        <div class="line-left"></div>
+        <div class="line-right"></div>
+      </div>
+      <div class="down">
+        1.幸运大转盘活动为概率性奖励活动,每日分4个时段向用户开放
+        <br>
+        第一场: 05:00-10:00
+        <br>
+        第二场: 10:00-14:00
+        <br>
+        第三场: 14:00-19:00
+        <br>
+        第四场: 19:00-24:00
+        <br>
+        每日参与抽奖达到一定次数可获得高额宝箱金币奖励,抽奖次数会在次日重新计算。
+        <br>
+        <br>
+        2.奖励翻倍次数仅在抽取到金币奖励时消耗,且剩余奖励翻倍次数会在次日清零。
+        <br>
+        <br>
+        3.抽奖均为免费抽奖,在法律许可范围内活动最终解释权归“走点钱“App所有。
+        <br>
+        <br>
+        4.若用户通过非正常手段恶意获取金币,走走赚钱有权对用户进行金币收回、清空以及封禁账户等处罚。
+        <br>
+        <br>
+        5.此活动所获得任何奖励均与苹果公司无关。
+      </div>
+    </div>
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        time: 4,//旋转所用时间
+        deg: 0,//旋转角度
+        luck: false,
+        arr: [
+          { deg: 30, msg: '大礼包' },
+          { deg: 90, msg: '500金币' },
+          { deg: 150, msg: '大礼包' },
+          { deg: 210, msg: '2000金币' },
+          { deg: 270, msg: '大礼包' },
+          { deg: 330, msg: '200金币' },
+        ],
+      },
+      methods: {
+        start() {
+          if (this.luck) {
+            return
+          }
+          this.luck = true;
+          let index = Math.ceil(Math.random() * 5);
+          this.play(index);
+          console.log(index + '--' + this.arr[index].msg)
+        },
+        play(index) {
+          let d = Math.ceil(Math.random() * 60)
+          console.log(d)
+          this.deg = 360 * 3 + this.arr[index].deg + d;
+          console.log(this.deg)
+          setTimeout(() => {
+            this.closeModal();
+          }, 7000);
+        },
+        //　关闭后重新开始
+        closeModal() {
+          this.luck = false; //开锁
+          let s = this.time;
+          this.modal = false;
+          this.time = 0; //恢复旋转时间0
+          this.deg = 0; //恢复旋转角度0
+          setTimeout(() => {
+            this.time = s; //旋转所用时间5
+          }, 100)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
